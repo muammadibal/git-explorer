@@ -3,6 +3,9 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: "export",
   basePath: "/git-explorer",
+  env: {
+    gitToken: process.env.GITHUB_ACCESS_TOKEN,
+  },
   images: {
     unoptimized: true,
   },
