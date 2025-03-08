@@ -4,7 +4,12 @@ export const fetchUsers = async ({ pageParam, limit, search, signal }: { pagePar
   console.log('fetchUsers', search)
   const res = await axios.get(
     `https://api.github.com/search/users?page=${pageParam}&per_page=${limit}&q=${search}`, {
-      signal
+      signal,
+      headers: {
+        Accept: '*/*',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+      }
     }
   );
   return { data: res.data?.items, nextPage: pageParam + 1 };
@@ -14,7 +19,12 @@ export const fetchRepos = async ({ search, signal }: { search: string; signal?: 
   console.log('fetchRepos', search)
   const res = await axios.get(
     `https://api.github.com/users/${search}/repos`, {
-      signal
+      signal,
+      headers: {
+        Accept: '*/*',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+      }
     }
   );
   return res.data;
