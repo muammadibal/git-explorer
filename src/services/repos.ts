@@ -8,7 +8,7 @@ const genUrl = (url: string) => {
 export const fetchUsers = async ({ pageParam, limit, search, signal }: { pageParam: number; limit: number; search: string; signal?: AbortSignal}) => {
   console.log('fetchUsers', search)
   const res = await axios.get(
-    genUrl(`https://api.github.com/search/users?page=${pageParam}&per_page=${limit}&q=${search}`), {
+    `https://api.github.com/search/users?page=${pageParam}&per_page=${limit}&q=${search}`, {
       // signal,
       headers: {
         // Accept: 'application/vnd.github+json',
@@ -26,7 +26,7 @@ export const fetchUsers = async ({ pageParam, limit, search, signal }: { pagePar
 export const fetchRepos = async ({ search, signal }: { search: string; signal?: AbortSignal}) => {
   console.log('fetchRepos', search)
   const res = await axios.get(
-    genUrl(`https://api.github.com/users/${search}/repos`), {
+    `https://api.github.com/users/${search}/repos`, {
       // signal,
       headers: {
         // Accept: 'application/vnd.github+json',
