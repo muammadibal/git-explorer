@@ -9,7 +9,6 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "homepage": "https://muammadibal.github.io/git-explorer",
   "dependencies": {
     "@ant-design/icons": "^5.6.1",
     "@ant-design/nextjs-registry": "^1.0.2",
