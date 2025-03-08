@@ -1,4 +1,5 @@
 import axios from "axios";
+const key = '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'
 
 export const fetchUsers = async ({ pageParam, limit, search, signal }: { pageParam: number; limit: number; search: string; signal?: AbortSignal}) => {
   console.log('fetchUsers', search)
@@ -8,7 +9,7 @@ export const fetchUsers = async ({ pageParam, limit, search, signal }: { pagePar
       headers: {
         Accept: 'application/vnd.github+json',
         "X-GitHub-Api-Version": "2022-11-28",
-        Authorization: `token ${process.env.gitToken}`,
+        Authorization: `Bearer ${key}`,
       }
     }
   );
@@ -23,7 +24,7 @@ export const fetchRepos = async ({ search, signal }: { search: string; signal?: 
       headers: {
         Accept: 'application/vnd.github+json',
         "X-GitHub-Api-Version": "2022-11-28",
-        Authorization: `token ${process.env.gitToken}`,
+        Authorization: `Bearer ${key}`,
       }
     }
   );
