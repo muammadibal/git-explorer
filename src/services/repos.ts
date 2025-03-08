@@ -1,16 +1,22 @@
 import axios from "axios";
 
+const genUrl = (url: string) => {
+  const q = `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`
+  return q
+}
+
 export const fetchUsers = async ({ pageParam, limit, search, signal }: { pageParam: number; limit: number; search: string; signal?: AbortSignal}) => {
   console.log('fetchUsers', search)
   const res = await axios.get(
     `https://api.github.com/search/users?page=${pageParam}&per_page=${limit}&q=${search}`, {
-      signal,
+      // signal,
       headers: {
-        Accept: '*/*',
-        Authorization: `Bearer ${process.env.gitToken}`,
-        withCredentials: true,
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
+        // Accept: 'application/vnd.github+json',
+        // "X-GitHub-Api-Version": "2022-11-28",
+        // Authorization: `token ${process.env.gitToken}`,
+        // withCredentials: true,
+        // 'Content-Type': 'application/json',
+        // 'Access-Control-Allow-Origin': '*',
       }
     }
   );
@@ -21,13 +27,14 @@ export const fetchRepos = async ({ search, signal }: { search: string; signal?: 
   console.log('fetchRepos', search)
   const res = await axios.get(
     `https://api.github.com/users/${search}/repos`, {
-      signal,
+      // signal,
       headers: {
-        Accept: '*/*',
-        Authorization: `Bearer ${process.env.gitToken}`,
-        withCredentials: true,
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
+        // Accept: 'application/vnd.github+json',
+        // "X-GitHub-Api-Version": "2022-11-28",
+        // Authorization: `token ${process.env.gitToken}`,
+        // withCredentials: true,
+        // 'Content-Type': 'application/json',
+        // 'Access-Control-Allow-Origin': '*',
       }
     }
   );

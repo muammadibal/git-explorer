@@ -1,5 +1,6 @@
 interface IFormik {
     search: string;
+    isLoading: boolean;
     runSearch: boolean;
     activeColumns: any[]
 }

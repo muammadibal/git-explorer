@@ -31,9 +31,9 @@ export default function FormSearchCard({formik, item, onChange}: {formik: Formik
                         <div className='flex flex-1'>{item.login}</div>
                     </div>
                 </Badge.Ribbon>,
-                children: isLoading ? <Flex align="center" gap="middle">
+                children: isLoading ? <Flex justify='center' align="center" gap="middle">
                 <Spin indicator={<LoadingOutlined spin />} size="large" />
-              </Flex> : itResult?.length === 0 ? null : itResult?.map((repo: IRepos) => (
+                </Flex> : itResult?.length === 0 ? null : itResult?.map((repo: IRepos) => (
                 <Space key={repo.id.toString()} className='mb-4 w-[95%] ml-5' direction="vertical" size={16}>
                     <Card className='shadow-sm' title={repo.name} extra={<div className='flex flex-row gap-2 items-center'>
                         <StarTwoTone twoToneColor={"#EBAC2FFF"} />

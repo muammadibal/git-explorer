@@ -12,6 +12,7 @@ import { toast } from 'react-toastify';
 export default function FormSearch() {
     const formik: FormikProps<IFormik> = useFormik<IFormik>({
         initialValues: {
+            isLoading: false,
             search: "",
             runSearch: false,
             activeColumns: []
@@ -30,9 +31,11 @@ export default function FormSearch() {
     useEffect(() => {
         if(formik.values.runSearch && formik.values.search.length === 0) {
             queryClient.resetQueries({queryKey: ["users"], exact: true})
+            // formik.setFieldValue("isLoading", false)
             formik.setFieldValue("runSearch", false)
         } 
         if(formik.values.runSearch && formik.values.search.length > 0) {
+            // formik.setFieldValue("isLoading", true)
             refetch()
         }
     }, [formik])
@@ -40,6 +43,7 @@ export default function FormSearch() {
     useEffect(() => {
         if(isError) {
             toast.error(error?.message)
+            // formik.setFieldValue("isLoading", false)
         }
     }, [isError])
 
@@ -49,7 +53,7 @@ export default function FormSearch() {
         <div className="flex items-center justify-center py-20">
             <Form onFinish={() => {
                 formik.setFieldValue("runSearch", true)
-            }} className="w-[40%] shadow-xl !p-2 rounded-lg bg-white">
+            }} className="w-[60%] md:w-[80%] shadow-xl !p-2 rounded-lg bg-white">
                 <div className="flex gap-4">
                     <Input 
                         prefix={<SearchOutlined style={{ color: 'rgba(0,0,0,.25)' }} />}
@@ -59,7 +63,7 @@ export default function FormSearch() {
                     }}>Search</Button>
                 </div>
                 {formik.values.runSearch && itData.length > 0 && <div>Showing users for "{formik.values.search}"</div>}
-                {fetchStatus === 'fetching' ? Array(5).fill("").map(_ => <div className="mx-4 mt-4 mb-2">
+                {false ? Array(20).fill("").map(_ => <div key={Math.random().toString()} className="mx-4 mt-4 mb-2">
                     <Skeleton avatar paragraph={{ rows: 1 }} active />
                 </div>) : <InfiniteScroll
                     dataLength={itData.length}
