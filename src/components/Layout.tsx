@@ -6,11 +6,12 @@ import React, { useEffect } from 'react'
 import { ToastContainer } from 'react-toastify';
 
 export const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      retry: 1,
-    },
-  },
+  defaultOptions: { 
+    queries: { 
+      retry: false, 
+      retryOnMount: false 
+    } 
+  }
 })
 
 export default function Layout({ children }: React.PropsWithChildren) {
