@@ -7,6 +7,7 @@ export const fetchUsers = async ({ pageParam, limit, search, signal }: { pagePar
       signal,
       headers: {
         Accept: '*/*',
+        withCredentials: true,
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
       }
@@ -22,6 +23,7 @@ export const fetchRepos = async ({ search, signal }: { search: string; signal?: 
       signal,
       headers: {
         Accept: '*/*',
+        withCredentials: true,
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
       }
