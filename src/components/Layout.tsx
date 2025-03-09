@@ -20,7 +20,6 @@ export default function Layout({ children }: React.PropsWithChildren) {
     useEffect(() => {
       document.documentElement.setAttribute("data-theme", theme);
     }, [theme]);
-    console.log("process.env.gitToken", process.env.gitToken);
 
     return (
       <main className={`${theme === 'dark' ? "bg-black" : "bg-[#B34B4BFF]"} min-h-screen transition-all duration-400`}>

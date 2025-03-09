@@ -69,7 +69,7 @@ export default function FormSearch() {
                             refetch()
                         }}>Search</Button>
                     </div>
-                    {formik.values.runSearch && itData.length > 0 && <div>Showing users for "{formik.values.search}"</div>}
+                    {formik.values.runSearch && itData.length > 0 && <div className={`${theme === 'dark' ? "text-white" : "text-black"} transition-all duration-400`}>Showing users for "{formik.values.search}"</div>}
                     <div
                         id="scrollableDiv"
                         style={{
