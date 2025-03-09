@@ -10,7 +10,7 @@ export default function LayoutHome({children}: PropsWithChildren) {
     return (
         <div>
             {children}
-            <FloatButton onClick={toggleTheme} icon={theme === 'light' ? <MoonOutlined className={theme === 'light' ? "opacity-0" : "opacity-1"} /> : <SunOutlined className={theme === 'dark' ? "opacity-0" : "opacity-1"} />}/>
+            <FloatButton onClick={toggleTheme} icon={theme === 'light' ? <MoonOutlined /> : <SunOutlined />}/>
         </div>
     )
 }
