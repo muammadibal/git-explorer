@@ -1,15 +1,14 @@
 import axios from "axios";
-const key = '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'
 
 export const fetchUsers = async ({ pageParam, limit, search, signal }: { pageParam: number; limit: number; search: string; signal?: AbortSignal}) => {
   console.log('fetchUsers', search)
   const res = await axios.get(
     `https://api.github.com/search/users?page=${pageParam}&per_page=${limit}&q=${search}`, {
-      // signal,
+      signal,
       headers: {
         Accept: 'application/vnd.github+json',
         "X-GitHub-Api-Version": "2022-11-28",
-        Authorization: `Bearer ${key}`,
+        Authorization: `token ${process.env.gitToken}`,
       }
     }
   );
@@ -20,11 +19,11 @@ export const fetchRepos = async ({ search, signal }: { search: string; signal?: 
   console.log('fetchRepos', search)
   const res = await axios.get(
     `https://api.github.com/users/${search}/repos`, {
-      // signal,
+      signal,
       headers: {
         Accept: 'application/vnd.github+json',
         "X-GitHub-Api-Version": "2022-11-28",
-        Authorization: `Bearer ${key}`,
+        Authorization: `token ${process.env.gitToken}`,
       }
     }
   );
