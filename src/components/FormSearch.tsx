@@ -63,7 +63,7 @@ export default function FormSearch() {
                     <div className="flex gap-4">
                         <Input 
                             prefix={<SearchOutlined style={{ color: 'rgba(0,0,0,.25)' }} />}
-                            allowClear value={formik.values.search} onChange={(e) => formik.setFieldValue("search", e.target.value)} placeholder="Enter username"/>
+                            allowClear value={formik.values.search} onChange={(e) => formik.setFieldValue("search", e.target.value)} placeholder="Search here..."/>
                         <Button type="primary" variant="filled" onClick={() => {
                             formik.setFieldValue("runSearch", true)
                             refetch()
