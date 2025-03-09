@@ -1,8 +1,12 @@
 interface IFormik {
     search: string;
     isLoading: boolean;
+    isLoadingMore?: boolean;
     runSearch: boolean;
-    activeColumns: any[]
+    activeColumns: any[];
+    data?: IUser[];
+    page?: number;
+    hasMore?: boolean;
 }
 
 interface IUser {

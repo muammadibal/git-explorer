@@ -8,7 +8,7 @@ export const fetchUsers = async ({ pageParam, limit, search, signal }: { pagePar
       headers: {
         Accept: 'application/vnd.github+json',
         "X-GitHub-Api-Version": "2022-11-28",
-        Authorization: `token ${process.env.gitToken}`,
+        // Authorization: `token ${process.env.gitToken}`,
       }
     }
   );
@@ -23,7 +23,7 @@ export const fetchRepos = async ({ search, signal }: { search: string; signal?: 
       headers: {
         Accept: 'application/vnd.github+json',
         "X-GitHub-Api-Version": "2022-11-28",
-        Authorization: `token ${process.env.gitToken}`,
+        // Authorization: `token ${process.env.gitToken}`,
       }
     }
   );

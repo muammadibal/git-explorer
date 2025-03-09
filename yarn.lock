@@ -493,13 +493,6 @@
   dependencies:
     tslib "^2.8.0"
 
-"@szhsin/react-accordion@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@szhsin/react-accordion/-/react-accordion-1.4.0.tgz#cbd2feda8999363428d7c1eaebcde4fdc53afd07"
-  integrity sha512-8wMTtyTIwP2BUVt+g5PgIs64bBP+NJte/T2wP8JKl4GW7leSo27a+jjqktWXzPEpRr5BM/FyGR2hVzLXX3bZBA==
-  dependencies:
-    react-transition-state "^2.2.0"
-
 "@tailwindcss/node@4.0.12":
   version "4.0.12"
   resolved "https://registry.yarnpkg.com/@tailwindcss/node/-/node-4.0.12.tgz#0f89ad2537eafe65a35ec4400b42142de918bafc"
@@ -3159,11 +3152,6 @@ react-toastify@^11.0.5:
   integrity sha512-EpqHBGvnSTtHYhCPLxML05NLY2ZX0JURbAdNYa6BUkk+amz4wbKBQvoKQAB0ardvSarUBuY4Q4s1sluAzZwkmA==
   dependencies:
     clsx "^2.1.1"
-
-react-transition-state@^2.2.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/react-transition-state/-/react-transition-state-2.3.0.tgz#ca73ed9f78a86c284459be2cc1e811b59a0df17d"
-  integrity sha512-OucQRyIpeq5g1/5qSBJH4p4U+SzYEoB3MsAXXz3ty116rPqG4jhwrzInImZ2gFi4XOffeLu6HNCZvkCM3DKaeg==
 
 react@^19.0.0:
   version "19.0.0"

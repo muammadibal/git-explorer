@@ -23,7 +23,7 @@ export default function Layout({ children }: React.PropsWithChildren) {
     console.log("process.env.gitToken", process.env.gitToken);
 
     return (
-      <main className="bg-[#B34B4BFF] min-h-screen">
+      <main className={`${theme === 'dark' ? "bg-black" : "bg-[#B34B4BFF]"} min-h-screen transition-all duration-400`}>
         <QueryClientProvider client={queryClient}>
           <AntdRegistry>{children}</AntdRegistry>
         </QueryClientProvider>
