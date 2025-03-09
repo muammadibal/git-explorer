@@ -1,5 +1,5 @@
 import axios from "axios";
-const key = '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'
+const key = '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'
 
 export const fetchUsers = async ({ pageParam, limit, search, signal }: { pageParam: number; limit: number; search: string; signal?: AbortSignal}) => {
   console.log('fetchUsers', search)
